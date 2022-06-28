@@ -77,8 +77,6 @@ export default {
         this.groupInfo.memberCount = response.members_count;
         this.groupInfo.photo = response.photo_100;
 
-        console.log(response);
-
         //Get member info
         const loadMembers = new Promise((res, rej) => {
           getGroupMembers(response.id, response.members_count)
@@ -110,7 +108,6 @@ export default {
             this.loading = false;
             this.longLoading = false;
             this.groupInfo.loaded = true;
-            console.log("all loaded");
           })
         );
       });

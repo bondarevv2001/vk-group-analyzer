@@ -13,8 +13,6 @@ async function getGroupById(id) {
 }
 
 async function getGroupMembers(id, members_count) {
-  console.log("getting group members");
-
   const callCount = Math.ceil(members_count / 1000);
   const membersIds = [];
   const memberIdRequests = [];
@@ -38,7 +36,6 @@ async function getGroupMembers(id, members_count) {
         if (response.data.error) {
           console.error(response.data.error);
         } else {
-          console.log("BATCH COMPLETED YEAH BABY");
           membersIds.push(...response.data.response.items);
         }
       })
@@ -72,7 +69,6 @@ async function getGroupMembers(id, members_count) {
         if (response.data.error) {
           console.error(response.data.error);
         } else {
-          console.log("BATCH COMPLETED YEAH BABY");
           totalMembersData.push(...response.data.response);
         }
       })
@@ -82,13 +78,10 @@ async function getGroupMembers(id, members_count) {
     await wait(334);
   }
 
-  console.log("DONE GETTING MEMBERS");
-
   return totalMembersData;
 }
 
 async function getGroupPosts(id) {
-  console.log("getting group posts");
   return axios
     .get(
       `http://localhost:8080//method/wall.get?owner_id=-${id}&count=100&access_token=${process.env.VUE_APP_TOKEN}&v=5.131`

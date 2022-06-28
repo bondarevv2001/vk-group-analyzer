@@ -14,6 +14,4 @@ module.exports = defineConfig({
   devServer: {
     proxy: "https://api.vk.com/",
   },
-  publicPath:
-    process.env.NODE_ENV === "production" ? "/vk-grou-analyzer/" : "/",
 });
