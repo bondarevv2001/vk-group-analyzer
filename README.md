@@ -1,24 +1,7 @@
 # vk-group-analyzer
 
-## Project setup
-```
-npm install
-```
+Программа выводит статистику о группе Вконтакте, её участниках и постах в виде графиков.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+![alt text]([http://url/to/img.png](https://imgur.com/a/xGlGY8L))
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Выполнено с помощью Vue, Chart.js
